@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  devcontainer:
+    image: mcr.microsoft.com/devcontainers/python:1-3.12
+    container_name: devcontainer
+    volumes:
+      - .:/workspace:cached
+    working_dir: /workspace
+    command: sleep infinity
+    ports:
+      - "3000:3000"
+    environment:
+      - TERM=xterm-256color
